@@ -12,9 +12,6 @@ jobs:
       # Step 1: Checkout the code
       - checkout
 
-      # Step 2: Authenticate with Docker Hub
-      - setup_remote_docker:
-          version: 20.10.7
       - run:
           name: Authenticate with Docker Hub
           command: |
