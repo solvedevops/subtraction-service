@@ -21,16 +21,16 @@ jobs:
       - run:
           name: Build Docker Image
           command: |
-            docker build -t $DOCKERHUB_USERNAME/subtraction-service:latest .
+            docker build -t $DOCKERHUB_USERNAME/useless-calculator-subtraction:latest .
             docker images
-            docker tag $DOCKERHUB_USERNAME/subtraction-service:latest $DOCKERHUB_USERNAME/subtraction-service:$(echo $CIRCLE_SHA1 | cut -c -7)
+            docker tag $DOCKERHUB_USERNAME/useless-calculator-subtraction:latest $DOCKERHUB_USERNAME/useless-calculator-subtraction:$(echo $CIRCLE_SHA1 | cut -c -7)
 
       # Step 4: Push the Docker image to Docker Hub
       - run:
           name: Push Docker Image to Docker Hub
           command: |
-            docker push $DOCKERHUB_USERNAME/subtraction-service:latest
-            docker push $DOCKERHUB_USERNAME/subtraction-service:$(echo $CIRCLE_SHA1 | cut -c -7)
+            docker push $DOCKERHUB_USERNAME/useless-calculator-subtraction:latest
+            docker push $DOCKERHUB_USERNAME/useless-calculator-subtraction:$(echo $CIRCLE_SHA1 | cut -c -7)
 
 workflows:
   version: 2
